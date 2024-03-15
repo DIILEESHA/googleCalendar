@@ -1,0 +1,87 @@
+.welcome_container {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    font-family: "Google Sans", "Roboto", Arial, sans-serif;
+}
+
+.welcome_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 0 40px;
+}
+
+.welcome_sub_grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcomer {
+    width: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.welcome_title {
+    font-size: 54px;
+    line-height: 64px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #202124;
+    -webkit-font-smoothing: antialiased;
+}
+
+.welcome_para {
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 400;
+    justify-self: center;
+    margin-bottom: 30px;
+}
+
+.sub_img img {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.getstarted {
+    color: white;
+    background-color: rgb(26, 115, 232);
+    border: none;
+    font-family: "Google Sans", "Roboto", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.downloadables {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.downloadables img {
+    width: 170px;
+}
+
+@media screen and (max-width: 800px) {
+    .welcome_grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .welcome_grid {
+        padding: 0 20px;
+    }
+}
