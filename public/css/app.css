@@ -5,3 +5,8 @@
     font-family: "Urbanist", sans-serif;
 
 }
+
+.fc-h-event .fc-event-title-container {
+/* background-color: teal; */
+padding: 10px;
+}

@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
  
 class AuthController extends Controller
 {
+
+
+
+    
     public function register()
     {
         return view('sign.signUp');

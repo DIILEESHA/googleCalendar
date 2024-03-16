@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/layout.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Google-calendar</title>
@@ -16,29 +16,37 @@
     <div class="navs ona">
         <div class="nav_left">
             <div class="nav_image">
-                <img class="nav_logos" loading="lazy" src="/img/logo.png" alt="">
+                <a href="#"">
+                    <img class="nav_logos" loading="lazy" src="/img/logo.png" alt="">
+                </a>
             </div>
         </div>
         <div class="nav_left">
-            <h4  class="sign_in"><a class="linka" href="{{ url('/') }}">Sign out</a></h4>
-
+            <button onclick="togglePopup()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Popup card -->
+            <div class="popup-card" id="popupCard">
+                <div class="container">
+                    <h4>Hi {{ Auth::user()->first_name }}</h4>
+                </div>
+                <h4><a href="{{ url('/') }}">Sign out</a></h4>
+            </div>
         </div>
-    </div>
-
-    <div id="signIn" style="display: none;">
-        @include('sign.signIn')
     </div>
 
     <main>
         @yield('contents')
     </main>
+
     <script>
-        function toggleCreateForm() {
-            var modal = document.getElementById('signIn');
-            if (modal.style.display === 'none' || modal.style.display === '') {
-                modal.style.display = 'block';
+        // Function to toggle the visibility of the popup card
+        function togglePopup() {
+            var popup = document.getElementById('popupCard');
+            if (popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block';
             } else {
-                modal.style.display = 'none';
+                popup.style.display = 'none';
             }
         }
     </script>

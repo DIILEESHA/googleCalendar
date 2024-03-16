@@ -16,7 +16,9 @@
     <div class="nav">
         <div class="nav_left">
             <div class="nav_image">
-                <img class="nav_logos" loading="lazy" src="/img/logo.png" alt="">
+                <a href="/"">
+                    <img class="nav_logos" loading="lazy" src="/img/logo.png" alt="">
+                </a>
             </div>
         </div>
         <div class="nav_left">
