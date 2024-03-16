@@ -23,6 +23,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 // Define the route for storing events outside the auth middleware group
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
-
-// Define route for fetching events for a specific date
-Route::get('/events/date/{date}', [EventController::class, 'eventsForDate'])->name('events.date');
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
+Route::get('/events/{date}', [EventController::class, 'getEventsForDate'])->name('events.date');

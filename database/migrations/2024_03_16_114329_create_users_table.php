@@ -42,7 +42,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->date('date')->nullable();
+            $table->date('event_date')->default(now()); // Specify a default value
             $table->timestamps();
         });
     }
