@@ -18,10 +18,13 @@
                 <img class="nav_logos" loading="lazy" src="/img/logo.png" alt="">
             </div>
         </div>
-        <div class="nav_left">
-            <h4  class="sign_in"><a class="linka" href="{{ url('/login') }}">Sign in</a></h4>
 
-        </div>
+        <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">Logout</button>
+        </form>
+       
     </div>
 
     <div id="signIn" style="display: none;">
@@ -31,6 +34,10 @@
     <main>
         @yield('content')
     </main>
+
+    <div class="container">
+        <h1> Welcome, {{ Auth::user()->first_name }}</h1>
+     </div>
     <script>
         function toggleCreateForm() {
             var modal = document.getElementById('signIn');

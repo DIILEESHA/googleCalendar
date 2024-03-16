@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="/css/welcome.css">
-        <title>Document</title>
+        <title>Google-calendar</title>
     </head>
 
     <body>
@@ -29,7 +29,7 @@
                         Workspace.
                     </p>
                     <div class="button_connector">
-                        <button class="getstarted">Sign in</button>
+                        <button onclick="toggleCreateForm()" class="getstarted">Sign in</button>
                     </div>
 
                     <div class="downloadables">
