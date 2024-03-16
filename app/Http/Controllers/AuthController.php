@@ -35,16 +35,16 @@ class AuthController extends Controller
  
     public function loginPost(Request $request)
     {
-        $credetials = [
+        $credentials = [
             'email' => $request->email,
             'password' => $request->password,
         ];
- 
-        if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Success');
+    
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('home')->with('success', 'Login Success');
         }
- 
-        return back()->with('error', 'Error Email or Password');
+    
+        return back()->with('error', 'Invalid Email or Password');
     }
  
     public function logout()
