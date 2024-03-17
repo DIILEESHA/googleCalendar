@@ -20,16 +20,26 @@ class AuthController extends Controller
  
     public function registerPost(Request $request)
     {
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ]);
+    
+      
         $user = new User();
- 
+    
+     
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
- 
+    
+      
         $user->save();
- 
-        return redirect('/login')->with('success', 'Login Success');
+   
+        return redirect('/login')->with('success', 'Signup Successful. Please login.');
     }
  
     public function login()

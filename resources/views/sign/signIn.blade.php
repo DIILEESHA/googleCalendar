@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="/css/signIn.css">
-    <title>Calendar -Login</title>
+    <title>Calendar - Login</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                     <input required type="password" name="password" id="password" class="sign_input">
                 </div>
                 <div class="btn_margin">
-                    <button type="submit" class="sign_btn ">Log in</button>
+                    <button type="submit" class="sign_btn">Log in</button>
                 </div>
                 <span class="sign_span">By continuing, you agree to the <span class="style">terms of use</span> and
                     <span class="style">privacy policy</span></span>
@@ -64,11 +64,24 @@
             }).showToast();
         }
 
+        function showSuccessToast(message) {
+            Toastify({
+                text: message,
+                duration: 1500,
+                gravity: "top",
+                position: "center",
+                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)"
+            }).showToast();
+        }
 
-        window.onload = function() {
+        window.onload = function () {
             var errorMessage = "{{ session('error') }}";
+            var successMessage = "{{ session('success') }}";
             if (errorMessage) {
                 showErrorToast(errorMessage);
+            }
+            if (successMessage) {
+                showSuccessToast(successMessage);
             }
         };
     </script>
