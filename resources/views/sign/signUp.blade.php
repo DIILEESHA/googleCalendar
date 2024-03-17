@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="/css/signup.css">
-        <title>Sign Up</title>
+        <title>Calendar-Sign Up</title>
     </head>
 
     <body>

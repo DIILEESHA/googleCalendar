@@ -29,7 +29,12 @@
                         Workspace.
                     </p>
                     <div class="button_connector">
-                        <button onclick="toggleCreateForm()" class="getstarted">Sign in</button>
+                        <button class="getstarted">
+
+                            <a class="linka" href="{{ url('/login') }}">
+                                Sign in
+                            </a>
+                        </button>
                     </div>
 
                     <div class="downloadables">

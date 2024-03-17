@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -14,7 +15,9 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/register', [AuthController::class, 'registerPost'])->name('register.post');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'loginPost'])->name('login.post');
+
 });
+Route::get('/forgotpassword', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -27,3 +30,5 @@ Route::group(['middleware' => 'auth'], function () {
 Route::post('/events', [EventController::class, 'store'])->name('events.store');
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/{date}', [EventController::class, 'getEventsForDate'])->name('events.date');
+
+
