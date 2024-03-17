@@ -57,7 +57,7 @@
         function showErrorToast(message) {
             Toastify({
                 text: message,
-                duration: 3000,
+                duration: 1500,
                 gravity: "top",
                 position: "center",
                 backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)"
